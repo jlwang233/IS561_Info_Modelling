@@ -1,0 +1,34 @@
+﻿@prefix : <http://example.com/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:enrollment_in_lis561 rdf:type :Enrollment ;
+:start_date "08/21/2016"^^xsd:string ;
+:provider :iSchool ;
+:instructor :David_Dubin ;
+:time :Monday.
+
+:Enrollment rdf:type rdfs:Class ;
+rdfs:subClassOf event:Event .
+
+:Monday rdf:type :Date .
+
+:Date rdf:type rdfs:Class ;
+rdfs:subClassOf org:Weekday .
+
+org:Weekday rdf:type rdfs:Class ;
+rdfs:subClassOf org:Day .
+
+:David_Dubin rdf:type foaf:Person .
+org:Person rdf:type rdfs:Class ;
+rdfs:subClassOf foaf:Agent .
+
+:iSchool rdf:type org:Organization .
+org:Organization rdf:type rdfs:Class ;
+rdfs:subClassOf foaf:Agent .
+
+
